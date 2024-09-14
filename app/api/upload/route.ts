@@ -2,7 +2,9 @@ import { NextResponse } from "next/server";
 // import { revalidatePath } from "next/cache";
 import fs from "node:fs/promises";
 const ffmpeg: any = require('fluent-ffmpeg');
-// const pathToFfmpeg: any = require("ffmpeg-static");
+const pathToFfmpeg: any = require("ffmpeg-static");
+ffmpeg.setFfmpegPath(pathToFfmpeg);
+console.log('pathToFfmpeg', pathToFfmpeg);
 
 export async function POST(req: Request) {
     const formData = await req.formData();
@@ -27,7 +29,6 @@ export async function POST(req: Request) {
                 resolve(`/tmp/${audioName}`)
             })
             .on("error", (err:any) => {
-                console.error("Error:", err);
                 reject(err);
             })
             .run();
