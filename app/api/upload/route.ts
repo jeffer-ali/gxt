@@ -25,7 +25,7 @@ export async function POST(req: Request) {
                 console.log("ffmpeg Processing finished!");
                 resolve(`/uploads/${audioName}`)
             })
-            .on("error", (err:any) => {
+            .on("error", err => {
                 console.error("Error:", err);
                 reject(err);
             })
@@ -33,7 +33,7 @@ export async function POST(req: Request) {
         })
     }
     try {
-        const result:any = await processVideoToAudio()
+        const result:unknown = await processVideoToAudio()
         
         return NextResponse.json({
             status: 200,
