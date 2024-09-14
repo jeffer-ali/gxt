@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { revalidatePath } from "next/cache";
+// import { revalidatePath } from "next/cache";
 import fs from "node:fs/promises";
 const ffmpeg: any = require('fluent-ffmpeg');
 // const pathToFfmpeg: any = require("ffmpeg-static");
@@ -8,22 +8,23 @@ export async function POST(req: Request) {
     const formData = await req.formData();
 
     const file = formData.get("file") as File;
+    console.log('upload文件名', file.name);
     const arrayBuffer = await file.arrayBuffer();
     const buffer = new Uint8Array(arrayBuffer);
-    await fs.writeFile(`./public/uploads/${file.name}`, buffer);
-    revalidatePath("/");
+    await fs.writeFile(`/tmp/${file.name}`, buffer);
+    // revalidatePath("/");
     const audioName =
       file.name.substring(0, file.name.lastIndexOf(".")) + ".wav";
 
     const processVideoToAudio = async () => {
         return new Promise((resolve, reject) => {
-            ffmpeg(`./public/uploads/${file.name}`)
+            ffmpeg(`/tmp/${file.name}`)
             .inputOptions('-vn')
-            .output(`./public/uploads/${audioName}`)
+            .output(`/tmp/${audioName}`)
             .on("end", async () => {
-                revalidatePath("/");
+                // revalidatePath("/");
                 console.log("ffmpeg Processing finished!");
-                resolve(`/uploads/${audioName}`)
+                resolve(`/tmp/${audioName}`)
             })
             .on("error", (err:any) => {
                 console.error("Error:", err);
