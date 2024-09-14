@@ -25,7 +25,7 @@ export async function POST(req: Request) {
                 console.log("ffmpeg Processing finished!");
                 resolve(`/uploads/${audioName}`)
             })
-            .on("error", err => {
+            .on("error", (err:any) => {
                 console.error("Error:", err);
                 reject(err);
             })
