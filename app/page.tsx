@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Uploader from "@/components/uploader"
 
 export default function Home() {
   return (
@@ -10,12 +11,16 @@ export default function Home() {
               <div className="md:w-0 md:flex-1">
                 <a className="flex items-center" href="/">
                   <Image src={'/images/travel-blog-logo.webp'} alt="Starter Site" width="230" height="300" decoding="async" className="h-14 sm:h-20 w-auto" />
-                  <p className="font-bold text-xl text-secondary-500 ml-3 mt-2">My Starter Site</p>
+                  <p className="font-bold text-xl text-primary ml-3 mt-2">我们的故事</p>
                 </a>
               </div>
             </div>
           </div>
         </header>
+
+        <div className="mt-8 max-w-screen-xl mx-auto">
+          <Uploader />
+        </div>
       </div>
     </div>
   );
