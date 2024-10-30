@@ -24,8 +24,8 @@ importers:
         specifier: ^0.5.0
         version: 0.5.0(react@18.3.1)
       '@readyplayerme/visage':
-        specifier: file:/Users/jeffer/work/visage
-        version: file:../../visage(@amplitude/analytics-browser@1.13.6)(@react-three/drei@9.108.4(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1))(@types/react@18.3.5)(@types/three@0.163.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1))(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1))(@react-three/postprocessing@2.16.2(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1))(@types/three@0.163.0)(react@18.3.1)(three@0.166.1))(@types/react@18.3.5)(postprocessing@6.35.6(three@0.166.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(suspend-react@0.1.3(react@18.3.1))(three-stdlib@2.30.4(three@0.166.1))(three@0.166.1)
+        specifier: ^6.4.4
+        version: 6.4.4(@amplitude/analytics-browser@1.13.6)(@react-three/drei@9.108.4(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1))(@types/react@18.3.5)(@types/three@0.163.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1))(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1))(@react-three/postprocessing@2.16.2(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1))(@types/three@0.163.0)(react@18.3.1)(three@0.166.1))(@types/react@18.3.5)(postprocessing@6.35.6(three@0.166.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(suspend-react@0.1.3(react@18.3.1))(three-stdlib@2.30.4(three@0.166.1))(three@0.166.1)
       '@remotion/cli':
         specifier: ^4.0.221
         version: 4.0.221(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -830,8 +830,8 @@ packages:
     peerDependencies:
       react: '>=16'
 
-  '@readyplayerme/visage@file:../../visage':
-    resolution: {directory: ../../visage, type: directory}
+  '@readyplayerme/visage@6.4.4':
+    resolution: {integrity: sha512-0IwYNy3F9T06txHzteSxijeeeuSsHW2SznQ8yMv4KMbATV/wJ5bOMAtDSmd24AzZ3Qs1eUqWCeimY5kEiLaEvA==}
     engines: {node: '>=18.0.0', npm: '>=8.6.0'}
     peerDependencies:
       '@amplitude/analytics-browser': ^1.13.6
@@ -4934,7 +4934,7 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  '@readyplayerme/visage@file:../../visage(@amplitude/analytics-browser@1.13.6)(@react-three/drei@9.108.4(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1))(@types/react@18.3.5)(@types/three@0.163.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1))(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1))(@react-three/postprocessing@2.16.2(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1))(@types/three@0.163.0)(react@18.3.1)(three@0.166.1))(@types/react@18.3.5)(postprocessing@6.35.6(three@0.166.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(suspend-react@0.1.3(react@18.3.1))(three-stdlib@2.30.4(three@0.166.1))(three@0.166.1)':
+  '@readyplayerme/visage@6.4.4(@amplitude/analytics-browser@1.13.6)(@react-three/drei@9.108.4(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1))(@types/react@18.3.5)(@types/three@0.163.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1))(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1))(@react-three/postprocessing@2.16.2(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1))(@types/three@0.163.0)(react@18.3.1)(three@0.166.1))(@types/react@18.3.5)(postprocessing@6.35.6(three@0.166.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(suspend-react@0.1.3(react@18.3.1))(three-stdlib@2.30.4(three@0.166.1))(three@0.166.1)':
     dependencies:
       '@amplitude/analytics-browser': 1.13.6
       '@react-three/drei': 9.108.4(@react-three/fiber@8.16.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1))(@types/react@18.3.5)(@types/three@0.163.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.166.1)
