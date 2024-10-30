@@ -28,27 +28,28 @@ export function ScrollList({ data }: any) {
     const freqRangeStartIndex=0
     const waveLinesToDisplay=29
     const mirrorWave=true
-    const audioData = useAudioData(staticFile("9f0f7bce.mp3"));
-    console.log('audioData', audioData)
+    const audioData = useAudioData(staticFile("herewithyou.mp3"));
+    // console.log('audioData', audioData)
     const {
         setPlaying
     } = useGlobalContext()
     const audioVizRef = useRef<{ jumpTime: (time:number) => void; resetWave: () => void }>(null);
 
     useEffect(() => {
-        const src='/9f0f7bce.srt'
-        fetch(src)
-            .then((res) => res.text())
-            .then((text) => {
-                const parsed = parseSRT(text);
-                const newData = parsed.map((item:any) => {
-                    return { time: item.start, content: item.text };
-                  })
-                setLrcData(newData)
-            })
-            .catch((err) => {
-                console.log("Error fetching subtitles", err);
-            });
+        // const src='/9f0f7bce.srt'
+        // fetch(src)
+        //     .then((res) => res.text())
+        //     .then((text) => {
+        //         const parsed = parseSRT(text);
+        //         const newData = parsed.map((item:any) => {
+        //             return { time: item.start, content: item.text };
+        //           })
+        //         setLrcData(newData)
+        //     })
+        //     .catch((err) => {
+        //         console.log("Error fetching subtitles", err);
+        //     });
+        setLrcData(data.songLyric.lrcData)
     }, [])
 
     // 字幕滚动
@@ -124,19 +125,6 @@ export function ScrollList({ data }: any) {
 
     return (
         <>
-            <div>
-                <audio 
-                    ref={audioRef} 
-                    src="/9f0f7bce.mp3"
-                    autoPlay={true}
-                    onPlay={() => setPlaying(true)}
-                    onPause={() => setPlaying(false)}
-                    onTimeUpdate={handleTimeUpdate}
-                    preload="metadata"
-                    controls
-                />
-            </div>
-
             <AudioViz
                 ref={audioVizRef}
                 waveColor="#15b8f7"
@@ -144,7 +132,7 @@ export function ScrollList({ data }: any) {
                 freqRangeStartIndex={0}
                 waveLinesToDisplay={29}
                 mirrorWave={true}
-                audioSrc={staticFile("9f0f7bce.mp3")}
+                audioSrc={staticFile("herewithyou.mp3")}
             />
             {/* <div className="scale-50 flex flex-row h-[96px] justify-center items-center gap-3 mt-12">
                 {frequenciesToDisplay.map((v, i) => {
@@ -183,6 +171,18 @@ export function ScrollList({ data }: any) {
                 ))}
                 </ScrollArea>
                 </div>
+            </div>
+            
+            <div className='flex justify-center'>
+                <audio 
+                    ref={audioRef} 
+                    src="/herewithyou.mp3"
+                    onPlay={() => setPlaying(true)}
+                    onPause={() => setPlaying(false)}
+                    onTimeUpdate={handleTimeUpdate}
+                    preload="metadata"
+                    controls
+                />
             </div>
         </>
     )

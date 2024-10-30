@@ -105,7 +105,7 @@ export const AudioViz = forwardRef<{
   }, [playing]);
   
   useEffect(() => {
-    console.log(value)
+    // console.log(value)
     setFrame(Number(value))
     // let animationFrameId:any;
     // const updateFrame = () => {
@@ -165,3 +165,4 @@ export const AudioViz = forwardRef<{
     </>
   );
 });
+AudioViz.displayName = 'AudioViz';
