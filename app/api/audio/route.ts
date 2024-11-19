@@ -2,9 +2,8 @@ import axios from "axios"
 import { NextRequest, NextResponse } from 'next/server'
 import { cosUploadBuffer } from "@/lib/cosUpload"
 
-const GROUP_ID = '1837474834917900516'
-const API_KEY =
-  'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJHcm91cE5hbWUiOiJHb2RlbCIsIlVzZXJOYW1lIjoiR29kZWwiLCJBY2NvdW50IjoiIiwiU3ViamVjdElEIjoiMTgzNzQ3NDgzNDkyNjI4OTEyNCIsIlBob25lIjoiMTM3MzIyMjYyNTIiLCJHcm91cElEIjoiMTgzNzQ3NDgzNDkxNzkwMDUxNiIsIlBhZ2VOYW1lIjoiIiwiTWFpbCI6IiIsIkNyZWF0ZVRpbWUiOiIyMDI0LTA5LTI3IDExOjA4OjI3IiwiaXNzIjoibWluaW1heCJ9.mO_3UZPRbciyFqeEnIc7lq9gD5UGFZo3wzrXU7Xgu5DlkCxzZOyRAmstWrcA6rKGpXplbzYIzD4jpB2GIcEUCx0HqFmNM--jP-qhqNC3ZheDAeWaldmu7IMu0N5NqTqZBR_IWXAox3p2Mf6q2puP9as-AvAKktrPHTs3zFewOBtes0KVDsXXetw43XPt3Vx6iTbipiCyDbCGGPa85uVCDB7Nwc9qltVgBebMY4cMFZHzQBxt7zBPplqk-ZmGgYY_Ij5UFBaSoJgvhz3-YOjGGOA2isS07H8px0Ohx6NJvp7Q3Hg0gkK0zOlhZb_aPcYl_Chk10hb-qAdNU7ZKHXG5Q'
+const GROUP_ID = process.env.MINIMAX_GROUP_ID
+const API_KEY = process.env.MINIMAX_API_KEY
 
 export async function POST(req: NextRequest) {
   const body = await req.json()
